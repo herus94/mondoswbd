@@ -12,11 +12,9 @@
     include_once('mysql-fix.php');
     require('db.php');
     session_start();
-    // Invio il form, controllo i dati ed eventualmente creo la sessione
     if (isset($_POST['username'])) {
         $username = ($_POST['username']);
         $password = md5($_POST["password"]);
-        // Controlliamo se l'utente è presente nel database
         $query    = "SELECT * FROM `utenti` WHERE username='$username'
                      AND password='$password'";
         $result = mysqli_query($con, $query) or die(mysql_error());
@@ -31,7 +29,6 @@
             $type = $row_t[0];
             $isAdmin = $row_a[0];
             $_SESSION['username'] = $username;
-            // Redirect to user dashboard page
             if ($type == "Dipendente" && $isAdmin == 1) {
                 header("Location: http://localhost:80/mondoswbd/adminpages/admin_dashboard.php");
             } else if ($type == "Dipendente" && $isAdmin != 1) {

@@ -1,5 +1,4 @@
 <?php
-//include auth_session.php file on all user panel pages
 include("auth_session.php");
 ?>
 <!DOCTYPE html>
@@ -47,7 +46,7 @@ include("auth_session.php");
                         <a class="navbar-item" href="http://localhost:80/mondoswbd/adminpages/contracts_management.php/">
                             Gestione Contratti
                         </a>
-                        <a class="navbar-item" href="http://localhost:80/mondoswbd/adminpag/furniture_management.php/">
+                        <a class="navbar-item" href="http://localhost:80/mondoswbd/adminpages/furniture_management.php/">
                             Gestione Mobili
                         </a>
                     </div>

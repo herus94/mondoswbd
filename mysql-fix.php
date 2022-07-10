@@ -1,8 +1,6 @@
 <?php
 if (!function_exists("mysql_connect")) {
-    /* warning: fatal error "cannot redeclare" if a function was disabled in php.ini with disable_functions:
-  disable_functions =mysql_connect,mysql_pconnect,mysql_select_db,mysql_ping,mysql_query,mysql_fetch_assoc,mysql_num_rows,mysql_fetch_array,mysql_error,mysql_insert_id,mysql_close,mysql_real_escape_string,mysql_data_seek,mysql_result
-  */
+
 
     define("MYSQL_ASSOC", MYSQLI_ASSOC);
     define("MYSQL_NUM", MYSQLI_NUM);
@@ -80,7 +78,6 @@ if (!function_exists("mysql_connect")) {
 
     function mysql_affected_rows($link_identifier = NULL)
     {
-        // TODO: check, if working when called without argument: mysql_affected_rows()
         global $global_link_identifier;
         if ($link_identifier == null) {
             $link_identifier = $global_link_identifier;
