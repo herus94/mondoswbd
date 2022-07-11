@@ -32,7 +32,7 @@ include("auth_session.php");
         <div class="box">
             <p>Ciao, <?php echo $_SESSION['username']; ?>!</p>
             <p><a href="http://localhost:80/mondoswbd/userpages/logout.php">Logout</a></p>
-            <h2> Mobili Attualmente Disponibili: </h2>
+            <h2 class="title has-text-centered"> Catalogo Mobili: </h2>
             <?php
             echo $furniture_table;
             ?>

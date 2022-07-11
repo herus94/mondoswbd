@@ -53,8 +53,10 @@ if (isset($_POST['removeemployee'])) {
     $res_u = queryToDB($sql_u);
     $sql_t = "SELECT tipo FROM utenti WHERE username = '$username'";
     $res_t = queryToDB($sql_t);
-    $row = mysqli_fetch_array($res_t);
-    $tipo = $row[0];
+    if (mysqli_num_rows($res_u) > 0) {
+        $row = mysqli_fetch_array($res_t);
+        $tipo = $row[0];
+    }
 
     if (mysqli_num_rows($res_u) == 0 || $tipo != "Dipendente") {
         $result = null;
@@ -88,6 +90,8 @@ if (isset($_POST['furniturecode'])) {
 
     if (mysqli_num_rows($res_c) == 0) {
         $result = null;
+    } else if ($quantita < 0) {
+        $result = null;
     } else {
         $query    = "UPDATE `mobili`
         SET quantita = '$quantita' 
@@ -104,7 +108,7 @@ if (isset($_POST['furniturecode'])) {
         echo "<div class='columns is-centered is-mobile'> 
         <div class='box'>
         <div class='form'>
-        <h3>Errore nella modifica. E' stato selezionato un codice non presente in database.</h3><br/>
+        <h3>Errore nella modifica. E' stato selezionato un codice non presente in database o immesso un valore non corretto.</h3><br/>
         </div></div></div>";
     }
 }
@@ -234,7 +238,7 @@ if (isset($_POST['number'])) {
     $acquirente = $_POST["acquirente"];
     $sql_n = "SELECT * FROM contratti WHERE numero='$number'";
     $res_n = queryToDB($sql_n);
-    if (mysqli_num_rows($res_n) > 0) {
+    if (mysqli_num_rows($res_n) > 0 || $total < 0 || $number < 0) {
         $result = null;
     } else {
         $query = "INSERT INTO `contratti` (`numero`, `totale`, `data`, `acquirente`) VALUES ('$number','$total', '$data', '$acquirente')";
@@ -251,7 +255,7 @@ if (isset($_POST['number'])) {
         echo "<div class='columns is-centered is-mobile'> 
         <div class='box'>
         <div class='form'>
-              <h3>Errore nella Registrazione. Numero contratto gia' presente.</h3><br/>
+              <h3>Errore nella Registrazione. E' stato scelto un numero contratto gia' presente o sono stati assegnati valori non corretti.</h3><br/>
               </div></div></div>";
     }
 }

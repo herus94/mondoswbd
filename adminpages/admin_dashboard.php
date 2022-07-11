@@ -7,6 +7,7 @@ include("auth_session.php");
 <head>
     <meta charset="utf-8">
     <title>Dashboard - Area Admin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
@@ -56,6 +57,8 @@ include("auth_session.php");
             <div class="columns is-centered is-mobile">
                 <h1 class="is-family-code">Schermata di Amministrazione</h2>
             </div>
+            <p class="mt-3"></p>
+            <img src="https://media.giphy.com/media/IqybrsS3F5dFZo2rpy/giphy.gif" width="200" height="200">
         </div>
     </div>
 </body>

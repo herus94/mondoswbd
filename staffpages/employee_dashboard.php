@@ -7,6 +7,7 @@ include("auth_session.php");
 <head>
     <meta charset="utf-8">
     <title>Dashboard - Area Staff</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
@@ -48,9 +49,12 @@ include("auth_session.php");
             </nav>
             <p class="mt-5"></p>
             <div class="columns is-centered is-mobile">
-                <h1 class="is-family-code">Schermata Dipendenti</h2>
+                <h1 class="is-family-code">Schermata Dipendenti</h1>
             </div>
+            <p class="mt-3"></p>
+            <img src="https://media.giphy.com/media/VeBQaNzMAbifhI7g5a/giphy.gif" width="200" height="200">
         </div>
+    </div>
     </div>
 </body>
 
