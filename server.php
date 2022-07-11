@@ -146,11 +146,11 @@ if (isset($_POST['employeecheck'])) {
 
 
 if (isset($_POST['username'])) {
-    $username = $_POST["username"];
+    $username = addslashes($_POST["username"]);
     $password = md5($_POST["password"]);
     $email = $_POST["email"];
-    $nome = $_POST["nome"];
-    $cognome = $_POST["cognome"];
+    $nome = addslashes($_POST["nome"]);
+    $cognome = addslashes($_POST["cognome"]);
     $telefono = $_POST["telefono"];
     $tipo = $_POST['tipo'];
     $cf = $_POST['cf'];
@@ -193,11 +193,11 @@ if (isset($_POST['username'])) {
 }
 
 if (isset($_POST['employeeusername'])) {
-    $username = $_POST["employeeusername"];
+    $username = addslashes($_POST["employeeusername"]);
     $password = md5($_POST["password"]);
     $email = $_POST["email"];
-    $nome = $_POST["nome"];
-    $cognome = $_POST["cognome"];
+    $nome = addslashes($_POST["nome"]);
+    $cognome = addslashes($_POST["cognome"]);
     $telefono = $_POST["telefono"];
     $cf = $_POST["cf"];
     $stipendio = $_POST["stipendio"];
